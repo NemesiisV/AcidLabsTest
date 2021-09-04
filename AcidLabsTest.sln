@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7A8FD485-737D-4930-9AFB-DBF6C1EB4124}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcidLabsTest.Api", "AcidLabsTest.Api\AcidLabsTest.Api.csproj", "{7EB9B34A-9B87-4C96-9C0D-37B8BEF09E07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcidLabsTest.Service", "AcidLabsTest.Service\AcidLabsTest.Service.csproj", "{D699A85B-7977-40F1-9B8A-9FEF516F363F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7EB9B34A-9B87-4C96-9C0D-37B8BEF09E07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EB9B34A-9B87-4C96-9C0D-37B8BEF09E07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EB9B34A-9B87-4C96-9C0D-37B8BEF09E07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EB9B34A-9B87-4C96-9C0D-37B8BEF09E07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D699A85B-7977-40F1-9B8A-9FEF516F363F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D699A85B-7977-40F1-9B8A-9FEF516F363F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D699A85B-7977-40F1-9B8A-9FEF516F363F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D699A85B-7977-40F1-9B8A-9FEF516F363F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7EB9B34A-9B87-4C96-9C0D-37B8BEF09E07} = {7A8FD485-737D-4930-9AFB-DBF6C1EB4124}
+		{D699A85B-7977-40F1-9B8A-9FEF516F363F} = {7A8FD485-737D-4930-9AFB-DBF6C1EB4124}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BE6C7948-3FA0-46AD-B72A-169FD78CB77F}
+	EndGlobalSection
+EndGlobal
