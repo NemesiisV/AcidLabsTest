@@ -1,40 +1,47 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
+using AcidLabsTest.Api.Frameworks;
+using AcidLabsTest.Service.Frameworks.ClientsService.ServiceContracts;
+using AcidLabsTest.Service.Frameworks.ClientsService.Services;
+using AcidLabsTest.Service.ServiceContracts;
+using AcidLabsTest.Service.Services;
 
 namespace AcidLabsTest.Api
 {
     public class Startup
     {
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
+            services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.IgnoreNullValues = true);
+            services.AddSwaggerGen();
+            services.AddHttpContextAccessor();
+
+            services.AddTransient<IUsersService, UsersService>();
+            services.AddTransient<IAmazonDynamoDbClientExtension, AmazonDynamoDbClientExtension>();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-
             app.UseRouting();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
-            });
+            app.UseAuthentication();
+            app.UseAuthorization();
+
+            app.UseCors(x => x
+                .SetIsOriginAllowed(origin => true)
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials());
+
+            app.UseCustomHandlingException();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(x => x.SwaggerEndpoint("/swagger/v1/swagger.json", "Acid Labs Technical Test API"));
+
+            app.UseEndpoints(x => x.MapControllers());
         }
     }
 }

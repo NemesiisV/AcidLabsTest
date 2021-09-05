@@ -8,10 +8,10 @@ namespace AcidLabsTest.Service.ServiceContracts
 {
     public interface IUsersService
     {
-        Task AddUserAsync(AddUserRequest addUserRequest);
+        Task<Guid> AddUserAsync(AddUserRequest addUserRequest);
         Task<Guid> GetUserIdByEmailAsync(string userEmail);
         Task<GetUserResponse> GetUserAsync(Guid userId);
-        Task UpdateUserAsync(Guid userId);
+        Task UpdateUserAsync(Guid userId, UpdateUserRequest updateUserRequest);
         Task DeleteUserAsync(Guid userId);
     }
 }

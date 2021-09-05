@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+using AcidLabsTest.Service.Models.Bases;
 
 namespace AcidLabsTest.Service.Models.Responses
 {
-    public sealed class GetUserResponse
+    public sealed class GetUserResponse : UserBase
     {
+        public Guid Id { get; set; }
+        public string Email { get; set; }
     }
 }

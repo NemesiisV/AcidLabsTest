@@ -2,8 +2,7 @@
 
 namespace AcidLabsTest.Service.Models.Requests
 {
-    public sealed class AddUserRequest : UserBase
+    public sealed class UpdateUserRequest : UserBase
     {
-        public string Email { get; set; }
     }
 }
