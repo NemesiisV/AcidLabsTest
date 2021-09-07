@@ -24,7 +24,7 @@ namespace AcidLabsTest.Api.Frameworks
                 var exName = exception.GetType().Name;
                 var statusCode = (int) HttpStatusCode.InternalServerError;
 
-                if (exception is not null && !string.IsNullOrEmpty(exName))
+                if (!string.IsNullOrEmpty(exName))
                 {
                     statusCode = GetHttpStatusCode(exName);
                 }

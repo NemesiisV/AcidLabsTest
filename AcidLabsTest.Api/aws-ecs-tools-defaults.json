@@ -1,0 +1,28 @@
+
+{
+    "region" : "sa-east-1",
+    "profile" : "AcidLabsApiAdmin",
+    "configuration" : "Release",
+    "image-tag"     : "acidlabstestapi:latest",
+    "docker-build-working-dir" : "",
+    "cluster"                  : "AcidLabsTestApi",
+    "launch-type"              : "FARGATE",
+    "launch-subnets"           : "subnet-9a3772fc,subnet-4a067d03,subnet-02d29259",
+    "launch-security-groups"   : "sg-7e57d536",
+    "assign-public-ip"         : true,
+    "task-definition-name"     : "AcidLabsTestApi",
+    "task-cpu"                 : "256",
+    "task-memory"              : "512",
+    "platform-version"         : "LATEST",
+    "task-definition-task-role" : "arn:aws:iam::792682987949:role/ecs_execution_AcidLabsTestApi",
+    "task-execution-role"       : "ecs_execution_AcidLabsTestApi",
+    "container-name"            : "AcidLabsTestApi",
+    "container-port-mapping"    : "80:80",
+    "container-environment-variables" : "\"ASPNETCORE_ENVIRONMENT\"=\"Production\"",
+    "skip-image-push"                 : false,
+    "cluster-service"                 : "AcidLabsTestApi",
+    "desired-count"                   : 1,
+    "deployment-minimum-healthy-percent" : 50,
+    "deployment-maximum-percent"         : 200,
+    "vstoolkit-deployment-mode"          : "PushOnly"
+}

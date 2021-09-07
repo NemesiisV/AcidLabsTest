@@ -8,6 +8,7 @@ using Swashbuckle.AspNetCore.Annotations;
 using AcidLabsTest.Service.Models.Requests;
 using AcidLabsTest.Service.Models.Responses;
 using AcidLabsTest.Service.ServiceContracts;
+using System.Collections.Generic;
 
 namespace AcidLabsTest.Api.Controllers
 {
@@ -39,12 +40,20 @@ namespace AcidLabsTest.Api.Controllers
             return await _usersService.GetUserIdByEmailAsync(userEmail).ConfigureAwait(false);
         }
 
-        [HttpGet, Route("id/{userId}")]
+        [HttpGet, Route("{userId}")]
         [SwaggerOperation("GetUserAsync")]
         [SwaggerResponse((int)HttpStatusCode.OK, "Ok", typeof(GetUserResponse))]
         public async Task<GetUserResponse> GetUserAsync([FromRoute] Guid userId)
         {
             return await _usersService.GetUserAsync(userId).ConfigureAwait(false);
+        }
+
+        [HttpGet]
+        [SwaggerOperation("GetAllUsersAsync")]
+        [SwaggerResponse((int) HttpStatusCode.OK, "Ok", typeof(IEnumerable<GetUserResponse>))]
+        public async Task<IEnumerable<GetUserResponse>> GetAllUserAsync()
+        {
+            return await _usersService.GetAllUsersAsync().ConfigureAwait(false);
         }
 
         [HttpPut, Route("{userId}")]

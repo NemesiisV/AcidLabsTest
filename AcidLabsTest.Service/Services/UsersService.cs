@@ -38,7 +38,7 @@ namespace AcidLabsTest.Service.Services
 
             var userId = Guid.NewGuid();
 
-            PutItemRequest putItemRequest = new()
+            PutItemRequest putItemRequest = new PutItemRequest()
             {
                 TableName = AmazonDynamoDbUserData.UserTable,
                 Item = new Dictionary<string, AttributeValue>()
@@ -53,7 +53,7 @@ namespace AcidLabsTest.Service.Services
 
             var result = await _amazonDynamoDbClient.PutItemAsync(putItemRequest).ConfigureAwait(false);
 
-            if (result.HttpStatusCode is not HttpStatusCode.OK)
+            if (result.HttpStatusCode != HttpStatusCode.OK)
             {
                 throw new InternalServerErrorException(result.ResponseMetadata.ToString());
             }
@@ -86,12 +86,29 @@ namespace AcidLabsTest.Service.Services
             return userItem.ToResponse();
         }
 
+        public async Task<IEnumerable<GetUserResponse>> GetAllUsersAsync()
+        {
+            ScanRequest scanRequest = new ScanRequest
+            {
+                TableName = AmazonDynamoDbUserData.UserTable
+            };
+
+            ScanResponse scanResponse = await _amazonDynamoDbClient.ScanAsync(scanRequest).ConfigureAwait(false);
+
+            if (!scanResponse.Items.Any())
+            {
+                throw new InternalServerErrorException(AmazonDynamoDbUserData.EmptyTable);
+            }
+
+            return scanResponse.Items.ToListResponse();
+        }
+
         public async Task UpdateUserAsync(Guid userId, UpdateUserRequest updateUserRequest)
         {
             _ = updateUserRequest ?? throw new ArgumentNullException(nameof(updateUserRequest));
             _ = await GetUserByIdAsync(userId).ConfigureAwait(false);
 
-            UpdateItemRequest updateItemRequest = new()
+            UpdateItemRequest updateItemRequest = new UpdateItemRequest()
             {
                 TableName = AmazonDynamoDbUserData.UserTable,
                 Key = new Dictionary<string, AttributeValue>()
@@ -115,7 +132,7 @@ namespace AcidLabsTest.Service.Services
 
             var result = await _amazonDynamoDbClient.UpdateItemAsync(updateItemRequest).ConfigureAwait(false);
 
-            if (result.HttpStatusCode is not HttpStatusCode.OK)
+            if (result.HttpStatusCode != HttpStatusCode.OK)
             {
                 throw new InternalServerErrorException(result.ResponseMetadata.ToString());
             }
@@ -142,7 +159,7 @@ namespace AcidLabsTest.Service.Services
 
             var result = await _amazonDynamoDbClient.DeleteItemAsync(deleteItemRequest).ConfigureAwait(false);
 
-            if (result.HttpStatusCode is not HttpStatusCode.OK)
+            if (result.HttpStatusCode != HttpStatusCode.OK)
             {
                 throw new InternalServerErrorException(result.ResponseMetadata.ToString());
             }
@@ -150,7 +167,7 @@ namespace AcidLabsTest.Service.Services
 
         private async Task<List<Dictionary<string, AttributeValue>>> GetUserByEmailAsync(string userEmail)
         {
-            QueryRequest queryRequest = new() {
+            QueryRequest queryRequest = new QueryRequest() {
                 TableName = AmazonDynamoDbUserData.UserTable,
                 IndexName = AmazonDynamoDbUserData.Email,
                 ExpressionAttributeNames = new Dictionary<string, string>()
@@ -171,7 +188,7 @@ namespace AcidLabsTest.Service.Services
 
         private async Task<Dictionary<string, AttributeValue>> GetUserByIdAsync(Guid userId)
         {
-            GetItemRequest getItemRequest = new()
+            GetItemRequest getItemRequest = new GetItemRequest()
             {
                 TableName = AmazonDynamoDbUserData.UserTable,
                 Key = new Dictionary<string, AttributeValue>()

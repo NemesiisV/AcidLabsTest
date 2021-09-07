@@ -35,6 +35,7 @@
 
         #region ErrorMessages
         public static readonly string UpdateRequestNull = "Email";
+        public static readonly string EmptyTable = "User table contains no records";
         public static string EmailNotExists(string userEmail) => $"User with email {userEmail} not registered";
         public static string IdNotExists(string userId) => $"User with id {userId} not registered";
         public static string ReservedUserCannotBeDelete(string userEmail) => $"User with email {userEmail} is reserved, cannot be removed";
