@@ -9,12 +9,12 @@ using AcidLabsTest.Service.Models.Requests;
 using AcidLabsTest.Service.Models.Responses;
 using AcidLabsTest.Service.ServiceContracts;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AcidLabsTest.Api.Controllers
 {
-    //[Authorize]
     [ApiController]
-    [Route("api/users")]
+    [Authorize(Policy = "ExecuteScopeRequired"), Route("api/users")]
     public sealed class UsersController
     {
         private readonly IUsersService _usersService;

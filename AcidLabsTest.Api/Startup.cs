@@ -3,10 +3,11 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 
 using AcidLabsTest.Api.Frameworks;
-using AcidLabsTest.Service.Frameworks.ClientsService.ServiceContracts;
-using AcidLabsTest.Service.Frameworks.ClientsService.Services;
+using AcidLabsTest.Service.Frameworks.ExternalServices.ServiceContracts;
+using AcidLabsTest.Service.Frameworks.ExternalServices.Services;
 using AcidLabsTest.Service.ServiceContracts;
 using AcidLabsTest.Service.Services;
+using Microsoft.IdentityModel.Tokens;
 
 namespace AcidLabsTest.Api
 {
@@ -21,6 +22,29 @@ namespace AcidLabsTest.Api
 
             services.AddTransient<IUsersService, UsersService>();
             services.AddTransient<IAmazonDynamoDbClientExtension, AmazonDynamoDbClientExtension>();
+            services.AddTransient<ISecurityAuthService, SecurityAuthService>();
+
+            SecurityAuthService managerService = new SecurityAuthService();
+
+            services.AddAuthentication(o => o.DefaultScheme = JwtBearerDefaults.AuthenticationScheme)
+
+                .AddScheme<JwtBearerOptions, JwtBearerHandler>(JwtBearerDefaults.AuthenticationScheme, options => {
+                    options.ConfigurationManager = managerService.GetConfiguration();
+                    options.ClaimsIssuer = managerService.GetConnectConfiguration().Issuer;
+                    options.RequireHttpsMetadata = true;
+                    options.Authority = "https://cognito-idp.sa-east-1.amazonaws.com/sa-east-1_VLnPO8inU";
+                    options.TokenValidationParameters = new TokenValidationParameters {
+                        ValidateLifetime = true,
+                        ValidateAudience = false,
+                        ValidateIssuer = true
+                    };
+                });
+
+            services.AddAuthorization(options => {
+                //options.AddPolicy("AdminGroup", policy =>
+                //    policy.Requirements.Add(new AdminGroupRequirement()));
+                //options.AddPolicyRequiredScope("ExecuteScopeRequired", new string[] { "api://nocourapi/execute" });
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

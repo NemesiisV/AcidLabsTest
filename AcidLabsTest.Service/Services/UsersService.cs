@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
 
-using AcidLabsTest.Service.Frameworks.ClientsService.ServiceContracts;
+using AcidLabsTest.Service.Frameworks.ExternalServices.ServiceContracts;
 using AcidLabsTest.Service.Frameworks.DataReadOnly;
 using AcidLabsTest.Service.Frameworks.Mappers;
 using AcidLabsTest.Service.Models.Requests;
