@@ -8,6 +8,7 @@ using AcidLabsTest.Service.Frameworks.ExternalServices.Services;
 using AcidLabsTest.Service.ServiceContracts;
 using AcidLabsTest.Service.Services;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace AcidLabsTest.Api
 {
@@ -40,11 +41,7 @@ namespace AcidLabsTest.Api
                     };
                 });
 
-            services.AddAuthorization(options => {
-                //options.AddPolicy("AdminGroup", policy =>
-                //    policy.Requirements.Add(new AdminGroupRequirement()));
-                //options.AddPolicyRequiredScope("ExecuteScopeRequired", new string[] { "api://nocourapi/execute" });
-            });
+            services.AddAuthorization();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

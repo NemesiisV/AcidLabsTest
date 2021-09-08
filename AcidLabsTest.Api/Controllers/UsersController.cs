@@ -1,20 +1,21 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
 
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
 using AcidLabsTest.Service.Models.Requests;
 using AcidLabsTest.Service.Models.Responses;
 using AcidLabsTest.Service.ServiceContracts;
-using System.Collections.Generic;
-using Microsoft.AspNetCore.Authorization;
 
 namespace AcidLabsTest.Api.Controllers
 {
+    [Authorize]
     [ApiController]
-    [Authorize(Policy = "ExecuteScopeRequired"), Route("api/users")]
+    [Route("api/users")]
     public sealed class UsersController
     {
         private readonly IUsersService _usersService;
