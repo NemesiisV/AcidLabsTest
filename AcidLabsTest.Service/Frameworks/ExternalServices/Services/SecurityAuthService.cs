@@ -1,8 +1,9 @@
-﻿using AcidLabsTest.Service.Frameworks.ExternalServices.ServiceContracts;
-using Microsoft.IdentityModel.Protocols;
+﻿using Microsoft.IdentityModel.Protocols;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 
-namespace AcidLabsTest.Service.Frameworks.ExternalServices.Services
+using AcidLabsService.Frameworks.ExternalServices.ServiceContracts;
+
+namespace AcidLabsService.Frameworks.ExternalServices.Services
 {
     public class SecurityAuthService : ISecurityAuthService
     {

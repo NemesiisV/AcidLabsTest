@@ -1,14 +1,14 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 
 using AcidLabsApi.Frameworks;
-using AcidLabsService.Frameworks.ClientsService.ServiceContracts;
-using AcidLabsService.Frameworks.ClientsService.Services;
+using AcidLabsService.Frameworks.ExternalServices.ServiceContracts;
+using AcidLabsService.Frameworks.ExternalServices.Services;
 using AcidLabsService.ServiceContracts;
 using AcidLabsService.Services;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace AcidLabsApi
 {

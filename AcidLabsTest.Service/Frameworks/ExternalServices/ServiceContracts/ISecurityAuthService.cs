@@ -1,7 +1,7 @@
 ﻿using Microsoft.IdentityModel.Protocols;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 
-namespace AcidLabsTest.Service.Frameworks.ExternalServices.ServiceContracts
+namespace AcidLabsService.Frameworks.ExternalServices.ServiceContracts
 {
     public interface ISecurityAuthService
     {
