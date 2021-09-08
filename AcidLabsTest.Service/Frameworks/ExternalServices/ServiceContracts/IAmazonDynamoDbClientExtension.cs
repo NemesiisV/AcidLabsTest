@@ -1,6 +1,6 @@
 ﻿using Amazon.DynamoDBv2;
 
-namespace AcidLabsTest.Service.Frameworks.ExternalServices.ServiceContracts
+namespace AcidLabsService.Frameworks.ExternalServices.ServiceContracts
 {
     public interface IAmazonDynamoDbClientExtension
     {

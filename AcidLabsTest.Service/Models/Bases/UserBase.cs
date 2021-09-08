@@ -1,4 +1,4 @@
-﻿namespace AcidLabsTest.Service.Models.Bases
+﻿namespace AcidLabsService.Models.Bases
 {
     public abstract class UserBase
     {

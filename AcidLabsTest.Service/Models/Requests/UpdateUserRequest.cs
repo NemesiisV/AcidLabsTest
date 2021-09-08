@@ -1,6 +1,6 @@
-﻿using AcidLabsTest.Service.Models.Bases;
+﻿using AcidLabsService.Models.Bases;
 
-namespace AcidLabsTest.Service.Models.Requests
+namespace AcidLabsService.Models.Requests
 {
     public sealed class UpdateUserRequest : UserBase
     {

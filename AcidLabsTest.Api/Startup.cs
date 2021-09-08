@@ -2,15 +2,15 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 
-using AcidLabsTest.Api.Frameworks;
-using AcidLabsTest.Service.Frameworks.ExternalServices.ServiceContracts;
-using AcidLabsTest.Service.Frameworks.ExternalServices.Services;
-using AcidLabsTest.Service.ServiceContracts;
-using AcidLabsTest.Service.Services;
+using AcidLabsApi.Frameworks;
+using AcidLabsService.Frameworks.ClientsService.ServiceContracts;
+using AcidLabsService.Frameworks.ClientsService.Services;
+using AcidLabsService.ServiceContracts;
+using AcidLabsService.Services;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 
-namespace AcidLabsTest.Api
+namespace AcidLabsApi
 {
     public class Startup
     {

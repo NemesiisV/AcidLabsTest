@@ -7,11 +7,11 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
-using AcidLabsTest.Service.Models.Requests;
-using AcidLabsTest.Service.Models.Responses;
-using AcidLabsTest.Service.ServiceContracts;
+using AcidLabsService.Models.Requests;
+using AcidLabsService.Models.Responses;
+using AcidLabsService.ServiceContracts;
 
-namespace AcidLabsTest.Api.Controllers
+namespace AcidLabsApi.Controllers
 {
     [Authorize]
     [ApiController]

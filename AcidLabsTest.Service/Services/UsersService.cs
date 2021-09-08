@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
 
-using AcidLabsTest.Service.Frameworks.ExternalServices.ServiceContracts;
-using AcidLabsTest.Service.Frameworks.DataReadOnly;
-using AcidLabsTest.Service.Frameworks.Mappers;
-using AcidLabsTest.Service.Models.Requests;
-using AcidLabsTest.Service.Models.Responses;
-using AcidLabsTest.Service.ServiceContracts;
+using AcidLabsService.Frameworks.ExternalServices.ServiceContracts;
+using AcidLabsService.Frameworks.DataReadOnly;
+using AcidLabsService.Frameworks.Mappers;
+using AcidLabsService.Models.Requests;
+using AcidLabsService.Models.Responses;
+using AcidLabsService.ServiceContracts;
 
-namespace AcidLabsTest.Service.Services
+namespace AcidLabsService.Services
 {
     public sealed class UsersService : IUsersService
     {

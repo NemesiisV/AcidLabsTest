@@ -1,4 +1,4 @@
-﻿namespace AcidLabsTest.Service.Frameworks.DataReadOnly
+﻿namespace AcidLabsService.Frameworks.DataReadOnly
 {
     public static class AmazonDynamoDbUserData
     {

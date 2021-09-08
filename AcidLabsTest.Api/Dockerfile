@@ -7,16 +7,16 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
-COPY ["AcidLabsTest.Api/AcidLabsTest.Api.csproj", "AcidLabsTest.Api/"]
-RUN dotnet restore "AcidLabsTest.Api/AcidLabsTest.Api.csproj"
+COPY ["AcidLabsApi/AcidLabsApi.csproj", "AcidLabsApi/"]
+RUN dotnet restore "AcidLabsApi/AcidLabsApi.csproj"
 COPY . .
-WORKDIR "/src/AcidLabsTest.Api"
-RUN dotnet build "AcidLabsTest.Api.csproj" -c Release -o /app/build
+WORKDIR "/src/AcidLabsApi"
+RUN dotnet build "AcidLabsApi.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "AcidLabsTest.Api.csproj" -c Release -o /app/publish
+RUN dotnet publish "AcidLabsApi.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "AcidLabsTest.Api.dll"]
+ENTRYPOINT ["dotnet", "AcidLabsApi.dll"]
