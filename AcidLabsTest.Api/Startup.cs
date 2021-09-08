@@ -2,13 +2,13 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 
-using AcidLabsTest.Api.Frameworks;
-using AcidLabsTest.Service.Frameworks.ClientsService.ServiceContracts;
-using AcidLabsTest.Service.Frameworks.ClientsService.Services;
-using AcidLabsTest.Service.ServiceContracts;
-using AcidLabsTest.Service.Services;
+using AcidLabsApi.Frameworks;
+using AcidLabsService.Frameworks.ClientsService.ServiceContracts;
+using AcidLabsService.Frameworks.ClientsService.Services;
+using AcidLabsService.ServiceContracts;
+using AcidLabsService.Services;
 
-namespace AcidLabsTest.Api
+namespace AcidLabsApi
 {
     public class Startup
     {

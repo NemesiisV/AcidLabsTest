@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
-using AcidLabsTest.Service.Models.Requests;
-using AcidLabsTest.Service.Models.Responses;
-using AcidLabsTest.Service.ServiceContracts;
+using AcidLabsService.Models.Requests;
+using AcidLabsService.Models.Responses;
+using AcidLabsService.ServiceContracts;
 using System.Collections.Generic;
 
-namespace AcidLabsTest.Api.Controllers
+namespace AcidLabsApi.Controllers
 {
     //[Authorize]
     [ApiController]

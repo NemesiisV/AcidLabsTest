@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-using AcidLabsTest.Service.Models.Requests;
-using AcidLabsTest.Service.Models.Responses;
+using AcidLabsService.Models.Requests;
+using AcidLabsService.Models.Responses;
 
-namespace AcidLabsTest.Service.ServiceContracts
+namespace AcidLabsService.ServiceContracts
 {
     public interface IUsersService
     {

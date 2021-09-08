@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "AcidLabsTest.Api": {
+    "AcidLabsApi": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",

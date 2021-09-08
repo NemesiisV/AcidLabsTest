@@ -1,8 +1,8 @@
 ﻿using System;
 
-using AcidLabsTest.Service.Models.Bases;
+using AcidLabsService.Models.Bases;
 
-namespace AcidLabsTest.Service.Models.Responses
+namespace AcidLabsService.Models.Responses
 {
     public sealed class GetUserResponse : UserBase
     {

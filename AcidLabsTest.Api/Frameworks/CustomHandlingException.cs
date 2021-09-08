@@ -8,10 +8,10 @@ using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 
-using AcidLabsTest.Service.Models.Exceptions;
-using AcidLabsTest.Service.Frameworks.DataReadOnly;
+using AcidLabsService.Models.Exceptions;
+using AcidLabsService.Frameworks.DataReadOnly;
 
-namespace AcidLabsTest.Api.Frameworks
+namespace AcidLabsApi.Frameworks
 {
     internal static class CustomHandlingException
     {

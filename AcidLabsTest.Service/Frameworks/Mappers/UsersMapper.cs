@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 using Amazon.DynamoDBv2.Model;
 
-using AcidLabsTest.Service.Frameworks.DataReadOnly;
-using AcidLabsTest.Service.Models.Responses;
+using AcidLabsService.Frameworks.DataReadOnly;
+using AcidLabsService.Models.Responses;
 using System.Linq;
 
-namespace AcidLabsTest.Service.Frameworks.Mappers
+namespace AcidLabsService.Frameworks.Mappers
 {
     public static class UsersMapper
     {

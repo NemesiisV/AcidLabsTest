@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace AcidLabsTest.Service.Models.Exceptions
+namespace AcidLabsService.Models.Exceptions
 {
     [DataContract]
     public sealed class ExceptionModel

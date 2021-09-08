@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7A8FD485-737D-4930-9AFB-DBF6C1EB4124}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcidLabsTest.Api", "AcidLabsTest.Api\AcidLabsTest.Api.csproj", "{7EB9B34A-9B87-4C96-9C0D-37B8BEF09E07}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcidLabsApi", "AcidLabsTest.Api\AcidLabsApi.csproj", "{7EB9B34A-9B87-4C96-9C0D-37B8BEF09E07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcidLabsTest.Service", "AcidLabsTest.Service\AcidLabsTest.Service.csproj", "{D699A85B-7977-40F1-9B8A-9FEF516F363F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcidLabsService", "AcidLabsTest.Service\AcidLabsService.csproj", "{D699A85B-7977-40F1-9B8A-9FEF516F363F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

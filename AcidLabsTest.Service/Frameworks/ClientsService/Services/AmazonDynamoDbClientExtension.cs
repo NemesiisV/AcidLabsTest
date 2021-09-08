@@ -1,9 +1,9 @@
 ﻿using Amazon.DynamoDBv2;
 using Microsoft.Extensions.Configuration;
 
-using AcidLabsTest.Service.Frameworks.ClientsService.ServiceContracts;
+using AcidLabsService.Frameworks.ClientsService.ServiceContracts;
 
-namespace AcidLabsTest.Service.Frameworks.ClientsService.Services
+namespace AcidLabsService.Frameworks.ClientsService.Services
 {
     public sealed class AmazonDynamoDbClientExtension : IAmazonDynamoDbClientExtension
     {
